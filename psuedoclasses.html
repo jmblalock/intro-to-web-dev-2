@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		.hover-example {
+			width: 100px;
+			height: 100px;
+			background-color: limegreen;
+			color: white;
+		}
+		.hover-example:hover { /* psudoclass */
+			background-color: crimson;
+			width: 150px;
+			height: 150px;
+		}
+		.first-child-example {
+			color: crimson;
+		}
+		.first-child-example:first-child { /* psudoclass */
+			color: limegreen;
+		}
+	</style>
+	<div class="hover-example">Hover your mouse over me</div>
+	<ol>
+		<li class="first-child-example">First</li>
+		<li class="first-child-example">Second</li>
+		<li class="first-child-example">Third</li>
+	</ol>
+</body>
+</html>
