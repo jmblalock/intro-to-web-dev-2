@@ -1,0 +1,88 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h3 {
+	display: flex;
+	justify-content: center;
+	font-style: italic;
+	font-weight: lighter;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: auto;
+	grid-template-areas: 
+		"header header header header"
+		"main-left main main main-right"
+		"footer-left footer footer footer";
+	border: 1px solid black;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	grid-area: header;
+}
+
+.item-a {
+	border: 1px solid black;
+	grid-area: main-left;
+	justify-content: center;
+}
+
+.item-b {
+	border: 1px solid black;
+	grid-area: main;
+	justify-content: center;
+}
+
+.item-c {
+	border: 1px solid black;
+	grid-area: main-right;
+	justify-content: center;
+}
+
+.item-d {
+	border: 1px solid black;
+	grid-area: footer-left;
+	justify-content: center;
+}
+
+.item-e {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	border: 1px solid black;
+	grid-area: footer;
+}
+
+.img1 {
+	border: 1px solid black;
+	margin-left: 25%;
+}
+
+.politics {
+	background-color: yellow;
+}
+
+.technology {
+	background-color: cyan;
+}
+
+.local {
+	background-color: seagreen;
+}
+
+.opinion {
+	background-color: blue;
+}
+
+.sports {
+	background-color: purple;
+}
