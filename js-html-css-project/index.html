@@ -4,91 +4,32 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Calculator</title>
+	<link rel="stylesheet" href="./style.css">
+	<script src="./main.js" defer></script>
 </head>
 <body>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-
-		body {
-			background-color: black;
-			color: white;
-			margin: 5%;
-		}
-
-		.container {
-			display: grid;
-			justify-items: stretch;
-			grid-template-columns: 100px 100px 100px 100px;
-			grid-template-rows: 100px 100px 100px 100px 100px 100px;
-			grid-template-areas:
-				"display display display display"
-				"cButton cButton back divide"
-				"num7 num8 num9 multiply"
-				"num4 num5 num6 subtract"
-				"num1 num2 num3 add"
-				"zero zero zero equals";
-		}
-
-		.display {
-			grid-area: display;
-		}
-
-		.c-button {
-			grid-area: cButton;
-		}
-
-		.zero {
-			grid-area: zero;
-		}
-
-		.display {
-			text-align: right;
-			font-size: 40px;
-		}
-
-		.divide, .multiply, .subtract, .add, .equals {
-			background-color: orange;
-		}
-
-	</style>
 	<main>
 		<section class="container">
 			<p class="display">
-				0
 			</p>
-			<button class="c-button">C</button>
-			<button class="back">⬅</button>
-			<button class="divide">➗</button>
+			<button class="ops c-button">C</button>
+			<button class="ops back">⬅</button>
+			<button class="ops divide">➗</button>
 			<button data-key="7" class="num">7</button>
 			<button data-key="8" class="num">8</button>
 			<button data-key="9" class="num">9</button>
-			<button class="multiply">✖️</button>
+			<button class="ops multiply">✖️</button>
 			<button data-key="4" class="num">4</button>
 			<button data-key="5" class="num">5</button>
 			<button data-key="6" class="num">6</button>
-			<button class="subtract">➖</button>
+			<button class="ops subtract">➖</button>
 			<button data-key="1" class="num">1</button>
 			<button data-key="2" class="num">2</button>
 			<button data-key="7" class="num">3</button>
-			<button class="add">➕</button>
-			<button data-key="0" class="zero">0</button>
-			<button class="equals">=</button>
+			<button class="ops add">➕</button>
+			<button data-key="0" class="num zero">0</button>
+			<button class="ops equals">=</button>
 		</section>
 	</main>
-	<script>
-
-		function handleClick(e) {
-			console.log(e.target.classList.value);
-			if (e.target.classList.value === 'num') {
-				const paragraph = document.querySelector(".display");
-				paragraph.innerHTML = e.target.innerHTML;
-			}
-		}
-
-		const buttons = document.querySelectorAll('button');
-		buttons.forEach(button => button.addEventListener('click', handleClick));
-	</script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+	color: white;
+	margin: 5%;
+}
+
+.container {
+	display: grid;
+	justify-items: stretch;
+	grid-template-columns: 100px 100px 100px 100px;
+	grid-template-rows: 100px 100px 100px 100px 100px 100px;
+	grid-template-areas:
+		"display display display display"
+		"cButton cButton back divide"
+		"num7 num8 num9 multiply"
+		"num4 num5 num6 subtract"
+		"num1 num2 num3 add"
+		"zero zero zero equals";
+}
+
+.display {
+	grid-area: display;
+}
+
+.c-button {
+	grid-area: cButton;
+}
+
+.zero {
+	grid-area: zero;
+}
+
+.display {
+	text-align: right;
+	font-size: 40px;
+}
+
+.divide, .multiply, .subtract, .add, .equals {
+	background-color: orange;
+}
