@@ -61,27 +61,34 @@
 			<button class="c-button">C</button>
 			<button class="back">⬅</button>
 			<button class="divide">➗</button>
-			<button class="num7">7</button>
-			<button class="num8">8</button>
-			<button class="num9">9</button>
+			<button data-key="7" class="num">7</button>
+			<button data-key="8" class="num">8</button>
+			<button data-key="9" class="num">9</button>
 			<button class="multiply">✖️</button>
-			<button class="num4">4</button>
-			<button class="num5">5</button>
-			<button class="num6">6</button>
+			<button data-key="4" class="num">4</button>
+			<button data-key="5" class="num">5</button>
+			<button data-key="6" class="num">6</button>
 			<button class="subtract">➖</button>
-			<button class="num1">1</button>
-			<button class="num2">2</button>
-			<button class="num3">3</button>
+			<button data-key="1" class="num">1</button>
+			<button data-key="2" class="num">2</button>
+			<button data-key="7" class="num">3</button>
 			<button class="add">➕</button>
-			<button class="zero">0</button>
+			<button data-key="0" class="zero">0</button>
 			<button class="equals">=</button>
 		</section>
 	</main>
 	<script>
-		var buttons = document.querySelectorAll('button');
-		buttons.forEach(button => button.addEventListener('click', () => {
-			console.log('click!');
-		}));
+
+		function handleClick(e) {
+			console.log(e.target.classList.value);
+			if (e.target.classList.value === 'num') {
+				const paragraph = document.querySelector(".display");
+				paragraph.innerHTML = e.target.innerHTML;
+			}
+		}
+
+		const buttons = document.querySelectorAll('button');
+		buttons.forEach(button => button.addEventListener('click', handleClick));
 	</script>
 </body>
 </html>
