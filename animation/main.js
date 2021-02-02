@@ -1,10 +1,13 @@
-const { styler, spring, listen, pointer, value } = window.popmotion;
+// const popmotion = require("popmotion"); // non-ES6 way
+import popmotion from "popmotion";
+
+const { styler, spring, listen, pointer, value } = popmotion;
 
 const ball = document.querySelector('.box');
 const divStyler = styler(ball);
 const ballXY = value({ x: 0, y: 0 }, divStyler.set);
 
-listen(ball, 'mousedown touchstart').start((e) => {
+listen(ball, 'mousedown touchstart').start(e => {
     e.preventDefault();
     pointer(ballXY.get()).start(ballXY);
   });
