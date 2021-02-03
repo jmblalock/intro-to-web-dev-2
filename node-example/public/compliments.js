@@ -1,6 +1,4 @@
-document
-  .querySelector(".request-compliment")
-  .addEventListener("click", function() {
+document.querySelector(".request-compliment").addEventListener("click", function() {
     fetch("/compliment")
       .then(function(res) {
         return res.json();
